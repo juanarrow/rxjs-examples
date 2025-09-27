@@ -2,6 +2,12 @@
 
 Una aplicación web moderna que demuestra el poder de RxJS a través de ejemplos visuales e interactivos. Construida con TypeScript, Vite y Tailwind CSS.
 
+## 🌐 Demo en Vivo
+
+**[🔗 Ver la aplicación en funcionamiento](https://juanarrow.github.io/rxjs-examples/)**
+
+Explora todos los ejemplos interactivos directamente en tu navegador.
+
 ## ✨ Características
 
 - **Ejemplos Interactivos**: Más de 30 ejemplos de RxJS organizados por categorías
@@ -44,7 +50,7 @@ Una aplicación web moderna que demuestra el poder de RxJS a través de ejemplos
 
 1. Clona el repositorio:
 \`\`\`bash
-git clone https://github.com/tu-usuario/rxjs-examples.git
+git clone https://github.com/juanarrow/rxjs-examples.git
 cd rxjs-examples
 \`\`\`
 
@@ -115,7 +121,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo \`LICENSE\` para más d
 - [Vite](https://vitejs.dev/) por la herramienta de desarrollo
 
 
-Link del Proyecto: [https://github.com/juanarrow/rxjs-examples](https://github.com/tu-usuario/rxjs-examples)
+Link del Proyecto: [https://github.com/juanarrow/rxjs-examples](https://github.com/juanarrow/rxjs-examples)
 
 ---
 
