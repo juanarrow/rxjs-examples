@@ -86,13 +86,13 @@ npm run dev
 ## 🎨 Capturas de Pantalla
 
 ### Modo Claro
-![Modo Claro](./screenshots/light-mode.png)
+![Modo Claro](./assets/light-mode.png)
 
 ### Modo Oscuro
-![Modo Oscuro](./screenshots/dark-mode.png)
+![Modo Oscuro](./assets/dark-mode.png)
 
 ### Vista Móvil
-![Vista Móvil](./screenshots/mobile-view.png)
+![Vista Móvil](./assets/mobile-view.png)
 
 ## 🤝 Contribuir
 
@@ -114,11 +114,8 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo \`LICENSE\` para más d
 - [Tailwind CSS](https://tailwindcss.com/) por el framework de CSS
 - [Vite](https://vitejs.dev/) por la herramienta de desarrollo
 
-## 📞 Contacto
 
-Tu Nombre - [@tu_twitter](https://twitter.com/tu_twitter) - tu.email@ejemplo.com
-
-Link del Proyecto: [https://github.com/tu-usuario/rxjs-examples](https://github.com/tu-usuario/rxjs-examples)
+Link del Proyecto: [https://github.com/juanarrow/rxjs-examples](https://github.com/tu-usuario/rxjs-examples)
 
 ---
 
