@@ -1,0 +1,575 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clases dinámicas para asegurar que Tailwind las incluya */
+.safelist-classes {
+  /* Estas clases se usan dinámicamente en JavaScript */
+  @apply slide-up fade-in opacity-0 opacity-100 transform translate-y-2 translate-y-0;
+  @apply bg-red-500 bg-blue-500 bg-green-500 bg-purple-500;
+  @apply text-red-300 text-blue-300 text-green-300 text-purple-300;
+  @apply border-red-500 border-blue-500 border-green-500 border-purple-500;
+  @apply from-red-600 to-pink-700 from-blue-600 to-purple-700;
+  @apply max-h-64 overflow-y-auto;
+}
+
+@layer base {
+  .font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+@layer components {
+  /* Navegación mejorada */
+  .nav-item {
+    @apply cursor-pointer;
+  }
+
+  .nav-item * {
+    pointer-events: none;
+  }
+
+  .nav-item.active {
+    @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25;
+  }
+
+  .nav-item.active .w-8 {
+    @apply bg-white/20 text-white;
+  }
+
+  .nav-item.active .text-xs {
+    @apply text-blue-100;
+  }
+
+  /* Cards de ejemplos súper modernos */
+  .example-card {
+    @apply bg-white/70 backdrop-blur-xl rounded-2xl border border-white/20 shadow-xl shadow-black/5 p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-black/10 hover:scale-[1.02] hover:bg-white/80;
+  }
+
+  /* Visualización de streams mejorada */
+  .stream-visualization {
+    @apply bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-dashed border-gray-200/60 min-h-24 relative overflow-hidden;
+  }
+
+  .stream-visualization::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-blue-50/30 to-transparent animate-pulse;
+  }
+
+  /* Items de stream con animaciones mejoradas */
+  .stream-item {
+    @apply inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-xl mr-3 mb-3 shadow-lg shadow-blue-500/25 transform transition-all duration-300 hover:scale-105;
+    animation: slideInBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .stream-item.bg-red-500 {
+    @apply bg-gradient-to-r from-red-500 to-pink-600 shadow-red-500/25;
+  }
+
+  /* Caja de operador mejorada */
+  .operator-box {
+    @apply bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-200/60 rounded-2xl p-4 text-center font-semibold text-indigo-700 shadow-lg shadow-indigo-500/10 backdrop-blur-sm;
+  }
+
+  /* Botones de control modernos */
+  .control-button {
+    @apply px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold text-sm rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transform hover:scale-105 active:scale-95;
+  }
+
+  .control-button:disabled {
+    @apply bg-gradient-to-r from-gray-300 to-gray-400 cursor-not-allowed shadow-none transform-none hover:scale-100;
+  }
+
+  /* Displays de salida mejorados */
+  .output-display {
+    @apply bg-gradient-to-br from-emerald-50/80 to-green-50/80 backdrop-blur-sm border-2 border-emerald-200/60 rounded-2xl p-6 min-h-20 shadow-lg shadow-emerald-500/10 max-h-64 overflow-y-auto;
+  }
+
+  .error-display {
+    @apply bg-gradient-to-br from-red-50/80 to-pink-50/80 backdrop-blur-sm border-2 border-red-200/60 rounded-2xl p-6 text-red-700 shadow-lg shadow-red-500/10;
+  }
+
+  /* Snippets de código mejorados */
+  .code-snippet {
+    @apply bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 rounded-2xl p-6 text-sm font-mono overflow-x-auto shadow-2xl shadow-black/20 border border-gray-700/50;
+  }
+
+  /* Botón de explicación mejorado */
+  .explanation-button {
+    @apply inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-700 bg-blue-50/80 hover:bg-blue-100/80 backdrop-blur-sm rounded-xl border border-blue-200/60 transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/10;
+  }
+
+  /* Panel de explicación mejorado */
+  .explanation-panel {
+    @apply bg-gradient-to-br from-blue-50/90 to-indigo-50/90 backdrop-blur-sm border-2 border-blue-200/60 rounded-2xl p-6 shadow-xl shadow-blue-500/10;
+  }
+
+  /* Inputs mejorados */
+  .modern-input {
+    @apply w-full px-4 py-3 bg-white/80 backdrop-blur-sm border-2 border-gray-200/60 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 text-gray-900 placeholder-gray-500;
+  }
+
+  /* Badges y etiquetas */
+  .status-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-badge.success {
+    @apply bg-emerald-100 text-emerald-700 border border-emerald-200;
+  }
+
+  .status-badge.error {
+    @apply bg-red-100 text-red-700 border border-red-200;
+  }
+
+  .status-badge.info {
+    @apply bg-blue-100 text-blue-700 border border-blue-200;
+  }
+
+  /* Separadores y divisores */
+  .divider {
+    @apply relative flex items-center justify-center my-8;
+  }
+
+  .divider::before {
+    content: '';
+    @apply absolute inset-0 flex items-center;
+  }
+
+  .divider::before {
+    @apply border-t border-gray-200/60;
+  }
+
+  .divider span {
+    @apply bg-white/80 backdrop-blur-sm px-4 text-sm text-gray-500 font-medium;
+  }
+
+  /* Tooltips y ayudas */
+  .tooltip {
+    @apply absolute z-50 px-3 py-2 text-xs font-medium text-white bg-gray-900/90 backdrop-blur-sm rounded-lg shadow-xl shadow-black/20 opacity-0 invisible transition-all duration-200;
+  }
+
+  .tooltip.show {
+    @apply opacity-100 visible;
+  }
+
+  /* Efectos de carga */
+  .loading-spinner {
+    @apply inline-block w-6 h-6 border-2 border-blue-200 border-t-blue-500 rounded-full animate-spin;
+  }
+
+  /* Animaciones personalizadas */
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Efectos de hover para cards */
+  .hover-lift {
+    @apply transition-all duration-300 hover:transform hover:scale-[1.02] hover:shadow-2xl;
+  }
+
+  /* Gradientes de fondo personalizados */
+  .bg-mesh {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
+  }
+
+  /* Estados de interacción mejorados */
+  .interactive {
+    @apply transition-all duration-200 cursor-pointer;
+  }
+
+  .interactive:hover {
+    @apply transform scale-105;
+  }
+
+  .interactive:active {
+    @apply transform scale-95;
+  }
+
+  /* Scrollbar personalizado */
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100/50 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300/80 rounded-full hover:bg-gray-400/80;
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInBounce {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(5px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Efectos de glassmorphism */
+.glass {
+  @apply backdrop-blur-xl bg-white/10 border border-white/20;
+}
+
+.glass-dark {
+  @apply backdrop-blur-xl bg-black/10 border border-white/10;
+}
+
+/* Utilidades adicionales */
+.text-gradient {
+  @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+}
+
+.border-gradient {
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3)) border-box;
+  border: 2px solid transparent;
+}
+
+/* Sidebar desktop simplificado */
+.sidebar-desktop nav {
+  max-height: calc(100vh - 8rem);
+}
+
+/* Modo oscuro para sidebar */
+.dark .sidebar-desktop nav {
+  @apply bg-gray-800/70 border-gray-700/20;
+}
+
+/* Responsive mejoras */
+@media (max-width: 1024px) {
+  /* En pantallas medianas, ocultar sidebar y usar layout móvil */
+  .sidebar-desktop {
+    @apply hidden;
+  }
+  
+  /* Mostrar navegación móvil */
+  .mobile-nav {
+    @apply block;
+  }
+}
+
+@media (max-width: 768px) {
+  .example-card {
+    @apply p-6;
+  }
+  
+  .stream-visualization {
+    @apply p-4;
+  }
+  
+  .code-snippet {
+    @apply p-4 text-xs;
+  }
+  
+  /* Ajustes para móvil */
+  .px-8 {
+    @apply px-4;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 480px) {
+  .example-card {
+    @apply p-4;
+  }
+  
+  .stream-visualization {
+    @apply p-3;
+  }
+  
+  .code-snippet {
+    @apply p-3 text-xs;
+  }
+}
+
+/* Navegación móvil (oculta por defecto, activa en responsive) */
+.mobile-nav {
+  @apply hidden lg:hidden;
+}
+
+@media (max-width: 1024px) {
+  .mobile-nav {
+    @apply block bg-white/70 backdrop-blur-xl rounded-2xl border border-white/20 shadow-xl shadow-black/5 mb-6 overflow-hidden;
+  }
+}
+
+.dark .mobile-nav {
+  @apply bg-gray-800/70 border-gray-700/20;
+}
+
+.mobile-nav .nav-item {
+  @apply px-4 py-2 text-sm;
+}
+
+.mobile-nav ul {
+  @apply flex flex-wrap gap-2 p-4;
+}
+
+.mobile-nav li {
+  @apply flex-1 min-w-max;
+}
+
+/* Estilos de modo oscuro para móvil */
+.dark .mobile-nav .nav-item {
+  color: #111827;
+}
+
+.dark .mobile-nav .nav-item:hover {
+  color: #ffffff;
+  @apply bg-gradient-to-r from-blue-600 to-purple-600;
+}
+
+.dark .mobile-nav .nav-item.active {
+  @apply bg-gradient-to-r from-blue-600 to-purple-700 text-white;
+}
+
+.dark .mobile-nav h2,
+.dark .mobile-nav .text-gray-900,
+.dark .mobile-nav .text-lg {
+  color: #e5e7eb;
+}
+
+/* Modo oscuro completo */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  @apply bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800;
+}
+
+/* Header en modo oscuro */
+.dark header {
+  @apply backdrop-blur-xl bg-gray-900/80 border-gray-700/20;
+}
+
+.dark .text-gradient {
+  @apply bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent;
+}
+
+/* Navegación en modo oscuro */
+.dark nav {
+  @apply bg-gray-800/70 border-gray-700/20;
+}
+
+.dark .nav-item {
+  @apply text-gray-300 hover:bg-gradient-to-r hover:from-gray-700/50 hover:to-gray-600/50 hover:text-white;
+}
+
+.dark .nav-item.active {
+  @apply bg-gradient-to-r from-blue-600 to-purple-700 text-white;
+}
+
+/* Cards en modo oscuro */
+.dark .example-card {
+  @apply bg-gray-800/70 border-gray-700/20 hover:bg-gray-800/80;
+}
+
+.dark .example-card h3,
+.dark .example-card h4 {
+  @apply text-gray-100;
+}
+
+.dark .example-card p {
+  @apply text-gray-300;
+}
+
+/* Botones en modo oscuro */
+.dark .explanation-button {
+  @apply text-blue-400 hover:text-blue-300 bg-blue-900/30 hover:bg-blue-900/50 border-blue-700/60;
+}
+
+.dark .control-button {
+  @apply bg-gradient-to-r from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800;
+}
+
+/* Paneles de explicación en modo oscuro */
+.dark .explanation-panel {
+  @apply bg-gradient-to-br from-blue-900/40 to-indigo-900/40 border-blue-700/60;
+}
+
+.dark .explanation-panel .text-gray-700 {
+  @apply text-gray-300;
+}
+
+/* Visualizaciones en modo oscuro */
+.dark .stream-visualization {
+  @apply bg-gradient-to-br from-gray-800/80 to-gray-700/80 border-gray-600/60;
+}
+
+.dark .output-display {
+  @apply bg-gradient-to-br from-emerald-900/40 to-green-900/40 border-emerald-700/60;
+}
+
+.dark .output-display .font-medium {
+  @apply text-gray-300;
+}
+
+.dark .error-display {
+  @apply bg-gradient-to-br from-red-900/40 to-pink-900/40 border-red-700/60 text-red-300;
+}
+
+/* Código en modo oscuro */
+.dark .code-snippet {
+  @apply bg-gradient-to-br from-gray-950 to-gray-900 border-gray-600/50;
+}
+
+/* Inputs en modo oscuro */
+.dark .modern-input {
+  @apply bg-gray-800/80 border-gray-600/60 text-gray-100 placeholder-gray-400 focus:border-blue-400;
+}
+
+/* Stream items en modo oscuro */
+.dark .stream-item {
+  @apply bg-gradient-to-r from-blue-600 to-purple-700;
+}
+
+.dark .stream-item.bg-red-500 {
+  @apply bg-gradient-to-r from-red-600 to-pink-700;
+}
+
+/* Badges en modo oscuro */
+.dark .status-badge.success {
+  @apply bg-emerald-900/40 text-emerald-300 border-emerald-700/60;
+}
+
+.dark .status-badge.error {
+  @apply bg-red-900/40 text-red-300 border-red-700/60;
+}
+
+.dark .status-badge.info {
+  @apply bg-blue-900/40 text-blue-300 border-blue-700/60;
+}
+
+/* Textos generales en modo oscuro */
+.dark .text-gray-900 {
+  @apply text-gray-100;
+}
+
+.dark .text-gray-800 {
+  @apply text-gray-200;
+}
+
+.dark .text-gray-700 {
+  @apply text-gray-300;
+}
+
+.dark .text-gray-600 {
+  @apply text-gray-400;
+}
+
+/* Scrollbar en modo oscuro */
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-gray-800/50;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-600/80 hover:bg-gray-500/80;
+}
+
+/* Efectos especiales en modo oscuro */
+.dark .bg-mesh {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.15) 0%, transparent 50%);
+}
+
+/* Transiciones suaves para el cambio de tema */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Elementos específicos del header en modo oscuro */
+.dark #theme-toggle {
+  @apply bg-gray-800/60 border-gray-700/30 hover:bg-gray-700/80;
+}
+
+.dark #theme-toggle svg {
+  @apply text-gray-300 group-hover:text-gray-100;
+}
+
+.dark .bg-white\/60 {
+  @apply bg-gray-800/60;
+}
+
+.dark .bg-white\/80 {
+  @apply bg-gray-800/80;
+}
+
+.dark .border-white\/30 {
+  @apply border-gray-700/30;
+}
+
+.dark .border-white\/20 {
+  @apply border-gray-700/20;
+}
